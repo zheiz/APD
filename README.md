@@ -1,4 +1,4 @@
-<img src = "apdlogo.png">
+<img src = "public/apdlogo.png">
 <h1>Welcome to the APD Organization Website Project!</h1>
 We're thrilled that you're considering contributing to the development of our organization's website. Whether you're a student, a designer, a developer, or just someone with a passion for helping out, your involvement is highly valued.
 
