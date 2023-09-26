@@ -6,6 +6,7 @@
         <title>APD - Question of the Day</title>
         <link rel = "stylesheet" href = "style.css">
         <link rel = "icon" href = "apdicon.png">
+        <script src="https://kit.fontawesome.com/b3459fa126.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     </head>
     <body>
@@ -35,23 +36,32 @@
 
     <div class = "row">
         <div class = "col left">
-            <label>HTML</label>
-            <textarea id = "html"></textarea>
+            <label><i class="fa-brands fa-html5"></i>HTML</label>
+            <textarea id = "html" onkeyup = "run()"></textarea>
 
-            <label>CSS</label>
-            <textarea id = "css"></textarea>
+            <label><i class="fa-brands fa-css3-alt"></i>CSS</label>
+            <textarea id = "css" onkeyup = "run()"></textarea>
 
-            <label>JavaScript</label>
-            <textarea id = "js"></textarea>
+            <label><i class="fa-brands fa-square-js"></i>JavaScript</label>
+            <textarea id = "js" onkeyup = "run()"></textarea>
         </div>
 
         <div class = "col right">
-
+            <label><i class="fa-solid fa-code"></i>Output</label>
+            <iframe id = "output"></iframe>
         </div>
     </div>
 
     <script>
+        function run() {
+            let htmlCode = document.getElementById("html").value;
+            let cssCode = document.getElementById("css").value;
+            let jsCode = document.getElementById("js").value;
+            let output = document.getElementById("output");
 
+            output.contentDocument.body.innerHTML = htmlCode + "<style>" + cssCode + "</style>";
+            output.contentWindow.eval(jsCode);
+        }
     </script>
 
 
