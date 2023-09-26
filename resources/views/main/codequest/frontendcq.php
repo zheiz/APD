@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>APD - Question of the Day</title>
+        <title>APD - Front End Challenge</title>
         <link rel = "stylesheet" href = "style.css">
         <link rel = "icon" href = "apdicon.png">
         <script src="https://kit.fontawesome.com/b3459fa126.js" crossorigin="anonymous"></script>
@@ -14,10 +14,10 @@
         <div class="container-fluid">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style = "color: white;">Home</a>
+                    <a class="nav-link" href="/home" style = "color: white;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style = "color: white;">Challenges</a>
+                    <a class="nav-link" href="/codequest" style = "color: white;">Challenges</a>
                 </li>
             </ul>
             <a class="navbar-brand" href="#">
@@ -25,10 +25,10 @@
             </a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style = "color: white;">News</a>
+                    <a class="nav-link" href="/news" style = "color: white;">News</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style = "color: white;">About</a>
+                    <a class="nav-link" href="/about" style = "color: white;">About</a>
                 </li>
             </ul>
         </div>

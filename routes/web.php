@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('main/codequest/frontendcq');
+    return view('main/home');
 });
+
+Route::get('home', [MainController::class, 'home']);
+Route::get('codequest', [MainController::class, 'codequest']);
+Route::get('news', [MainController::class, 'news']);
+Route::get('about', [MainController::class, 'about']);
