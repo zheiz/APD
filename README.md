@@ -7,7 +7,7 @@ We're thrilled that you're considering contributing to the development of our or
 Even the tiniest contributions can make a big difference! If you have ideas, suggestions, or improvements, please don't hesitate to share them. This could be as simple as changing icons or providing design assets.
 
 <h3>2. Design Enthusiasts</h3>
-If you're a designer and have created some fantastic icons, graphics, or other design elements, we'd love to feature them on our website. Your creative input can enhance the visual appeal of our platform.
+If you're a designer and have created some fantastic icons, graphics, or other design elements, we'd love to feature them on our website. Your creative input can enhance the visual appeal of our platform. For icons we suggest 16x16px,32x32px and 48x48px.
 
 <h3>3. Web Development Skills</h3>
 If you have skills in HTML, CSS, and JavaScript, you can directly contribute to building and improving the website's frontend. Your coding expertise is invaluable in creating a seamless and user-friendly experience for our visitors.
@@ -16,6 +16,7 @@ If you have skills in HTML, CSS, and JavaScript, you can directly contribute to 
 If you're up for the challenge, we're here to learn and build together. We're excited about the possibility of collaborating on a Laravel-based website. Join us on this learning journey, and let's create something amazing!
 
 <h2>What's in It for You?</h2>
+
 <h3>Achievement:</h3> Contributing to our organization's website is not just a contribution; it's an achievement. You'll be part of a team effort that showcases the collective skills and dedication of APD members.
 
 <h3>GitHub Activity:</h3> You'll earn those coveted green squares on your GitHub profile as you make contributions to the project. It's a great way to demonstrate your commitment to open-source collaboration.
