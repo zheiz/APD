@@ -15,10 +15,22 @@ use App\Http\Controllers\MainController;
 */
 
 Route::get('/', function () {
-    return view('main/home');
+    return view('main.registerpage');
 });
 
 Route::get('home', [MainController::class, 'home']);
 Route::get('codequest', [MainController::class, 'codequest']);
 Route::get('news', [MainController::class, 'news']);
 Route::get('about', [MainController::class, 'about']);
+
+
+
+Route::get('/registerpage', [RegisterAndLoginController::class, 'registerpage']);
+Route::get('/loginpage', function () {
+    return view('main.loginpage');
+});
+
+Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom'); 
+Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
+Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom'); 
+Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
