@@ -15,7 +15,7 @@ use App\Http\Controllers\MainController;
 */
 
 Route::get('/', function () {
-    return view('main.registerpage');
+    return view('main.news');
 });
 
 Route::get('home', [MainController::class, 'home']);

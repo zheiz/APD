@@ -21,7 +21,7 @@
                 </li>
             </ul>
             <a class="navbar-brand" href="#">
-                <img src="apdlogo.png" alt="APD logo" width="400" height="70" class="d-inline-block align-text-top">
+                <img src="apdlogo.png" alt="APD logo" width="300" height="70" class="d-inline-block align-text-top">
             </a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
