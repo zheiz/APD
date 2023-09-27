@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
-
+use App\Http\Controllers\RegisterAndLoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +29,5 @@ Route::get('/registerpage', [RegisterAndLoginController::class, 'registerpage'])
 Route::get('/loginpage', function () {
     return view('main.loginpage');
 });
+Route::get('/student-num-exists',[RegisterAndLoginController::class,'studentNumExists']);
+Route::post('/register',[RegisterAndLoginController::class,'register']);

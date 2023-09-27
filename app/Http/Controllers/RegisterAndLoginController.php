@@ -7,7 +7,7 @@ use Hash;
 use Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 
 class RegisterAndLoginController extends Controller
 {
@@ -36,36 +36,46 @@ class RegisterAndLoginController extends Controller
    
         return redirect("login")->withSuccess('Login details are not valid');
     }
-
+    public function studentNumExists(Request $request){
+        $data=$request->all();
+        $studNumber=$data['studentid'];
+        $result=DB::table('users')
+            ->where('studentid',$studNumber)
+            ->first();
+        if(empty($result)){
+            return response()->json(["success"=>false]);   
+        }
+        return response()->json(["success"=>true]);
+    }
     public function register(Request $request)
     {  
-        $request->validate([
-            'studentid' => 'required',
-            'firstname' => 'required',
-            'middlename' => '',
-            'lastname' => 'required',
-            'yearlevel' => 'required',
-            'program' => 'required',
-            'password' => 'required | password',
-        ]);
-            
         $data = $request->all();
-        $check = $this->create($data);
-          
+        $check = $this->create($data);  
         return redirect("dashboard")->withSuccess('have signed-in');
     }
 
     public function create(array $data)
     {
+      /*return DB::table('users')
+        ->insert([
+            'studentid' => $data['studentid'],
+            'firstname' => $data['firstname'],
+            'middlename' => $data['middlename'],
+            'lastname' => $data['lastname'],
+            'yearlevel' => $data['yearlevel'],
+            'program' => $data['program'],
+            'password' => $data['password']
+        ]);*/
+      
       return User::create([
-        'studentid' => $data['studentid'],
-        'firstname' => $data['firstname'],
-        'middlename' => $data['middlename'],
-        'lastname' => $data['lastname'],
-        'yearlevel' => $data['yearlevel'],
-        'program' => $data['program'],
-        'password' => $data['password'],
-    ]);
+            'studentid' => $data['studentid'],
+            'firstname' => $data['firstname'],
+            'middlename' => $data['middlename'],
+            'lastname' => $data['lastname'],
+            'yearlevel' => $data['yearlevel'],
+            'program' => $data['program'],
+            'password' => $data['password'],
+        ]);
     }
 
     public function success()

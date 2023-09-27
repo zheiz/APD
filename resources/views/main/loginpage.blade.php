@@ -22,6 +22,7 @@
                 <input type="password" class="form-control" id="password">
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
+            <a href = "/" class="mt-2">New to APD? Click here</a>
         </form>
     </div>
 
