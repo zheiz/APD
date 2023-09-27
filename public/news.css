@@ -28,7 +28,6 @@ body {
     top: 0;
     background-color: rgb(38, 38, 38) !important;
     z-index: 100;
-    border: 1px solid var(--twitter-background);
     padding: 15px 20px;
   }
   
@@ -56,8 +55,8 @@ body {
   .post {
     display: flex;
     align-items: flex-start;
-    padding-bottom: 10px;
-    margin: 45px 0;
+    padding: 15px;
+    margin: 15px 0;
   }
 
   .image-grid {
@@ -70,6 +69,11 @@ body {
     width: 250px;
     border-radius: 20px;
     cursor: pointer;
+    transition: .3s;
+  }
+
+  .image-grid img:hover {
+    filter: brightness(40%);
   }
   
   .post__footer {
@@ -98,13 +102,19 @@ body {
   
   .post__headerDescription {
     margin-bottom: 10px;
+    padding: 15px;
     font-size: 15px;
     font-weight: 300;
   }
   
   .post__body {
     flex: 1;
+    background-color: rgb(25, 25, 25);
     padding: 10px;
+    border-radius: 15px;
+    box-shadow: 3px 8px 19px 9px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 8px 19px 9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 8px 19px 9px rgba(0,0,0,0.75);
   }
   
   .post__avatar {
