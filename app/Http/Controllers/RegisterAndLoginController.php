@@ -47,7 +47,7 @@ class RegisterAndLoginController extends Controller
     {  
         $data = $request->all();
         $check = $this->create($data);  
-        return redirect("dashboard")->withSuccess('have signed-in');
+        return response()->json(["success"=>true]);
     }
 
     public function create(array $data)
@@ -86,7 +86,6 @@ class RegisterAndLoginController extends Controller
     public function signOut() {
         Session::flush();
         Auth::logout();
-   
         return Redirect('login');
     }
 
