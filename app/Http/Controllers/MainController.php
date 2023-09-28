@@ -15,7 +15,7 @@ class MainController extends Controller
     public function codequest()
     {
         // Return the "Home" view
-        return view('main/codequest/mpcq');
+        return view('main/codequest');
     }
 
     public function news()
@@ -29,4 +29,27 @@ class MainController extends Controller
         // Return the "Home" view
         return view('main/about');
     }
+
+    //Code Quest routes
+
+    public function mpcq()
+    {
+        // Return the "Home" view
+        return view('main/codequest/mpcq');
+    }
+
+    public function fe()
+    {
+        // Return the "Home" view
+        return view('main/codequest/fe');
+    }
+
+    public function be()
+    {
+        // Return the "Home" view
+        return view('main/codequest/be');
+    }
 }
+
+//Code Quest routes
+

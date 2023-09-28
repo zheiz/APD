@@ -1,9 +1,100 @@
-  
-body {
-    background-color: rgb(38, 38, 38) !important;
-    overflow-x: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #333;
+}
+
+.logo {
+    width: 80px;
+}
+
+.header {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255, 0.1);
+}
+
+header nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: .5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+header ul a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.83rem;
+}
+
+.profile a {
+    font-size: 1.25rem;
+    padding: 0 2rem;
+}
+
+.hamburger {
+    padding-left: 1.5rem;
+}
+
+.hamburger a {
+    padding: 0;
+    width: 37px;
+    height: 37px;
+    display: flex;
+    border-radius: 50%;
+    background-color: rgba(115,115,115, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger .bar {
+    position: relative;
+    width: 52%;
+    height: 1.3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.hamburger .bar::before,
+.hamburger .bar::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 60%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: 2px;
+}
+
+.hamburger .bar::before {
+    top: -4.5px;
+}
+
+.hamburger .bar::after {
+    top: 4.5px;
+}
+
+/*END NAVBAR*/
   
   /* feed */
   .feed-container {
@@ -16,7 +107,7 @@ body {
 
   .feed {
     flex: 0.5;
-    max-width: 700px !important;
+    max-width: 1000px !important;
     overflow-y: scroll;
     color: #fff;
     
@@ -26,7 +117,7 @@ body {
     display: flex;
     position: sticky;
     top: 0;
-    background-color: rgb(38, 38, 38) !important;
+    background-color: transparent;
     z-index: 100;
     padding: 15px 20px;
   }
@@ -109,12 +200,8 @@ body {
   
   .post__body {
     flex: 1;
-    background-color: rgb(25, 25, 25);
     padding: 10px;
     border-radius: 15px;
-    box-shadow: 3px 8px 19px 9px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 3px 8px 19px 9px rgba(0,0,0,0.75);
-    -moz-box-shadow: 3px 8px 19px 9px rgba(0,0,0,0.75);
   }
   
   .post__avatar {

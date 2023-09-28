@@ -4,35 +4,38 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>APD - Front End Challenge</title>
-        <link rel = "stylesheet" href = "style.css">
+        <link rel = "stylesheet" href = "fe.css">
         <link rel = "icon" href = "apdicon.png">
-        <script src="https://kit.fontawesome.com/b3459fa126.js" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-        <div class="container-fluid">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/home" style = "color: white;">Home</a>
+
+    <header>
+        <nav>
+            <img src = "apdicon.png" alt = "APD Logo" class = "logo">
+            <ul>
+                <li class = "home">
+                    <a href = "/home">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/codequest" style = "color: white;">Challenges</a>
+                <li class = "cq">
+                    <a href = "/codequest">Code Quest</a>
+                </li>
+                <li class = "news">
+                    <a href = "news">News</a>
+                </li>
+                <li class = "about">
+                    <a href = "about">About</a>
+                </li>
+                <li class = "profile">
+                    <a href = "#"><i class="fa-solid fa-address-card"></i></a>
+                </li>
+                <li class = "hamburger">
+                    <a href = "#">
+                        <div class = "bar"></div>
+                    </a>
                 </li>
             </ul>
-            <a class="navbar-brand" href="#">
-                <img src="apdlogo.png" alt="APD logo" width="400" height="70" class="d-inline-block align-text-top">
-            </a>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/news" style = "color: white;">News</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about" style = "color: white;">About</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <div class = "row">
         <div class = "col left">

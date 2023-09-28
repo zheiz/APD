@@ -24,6 +24,11 @@ Route::get('codequest', [MainController::class, 'codequest']);
 Route::get('news', [MainController::class, 'news']);
 Route::get('about', [MainController::class, 'about']);
 
+//Code Quest Routes
+Route::get('mpcq', [MainController::class, 'mpcq']);
+Route::get('fe', [MainController::class, 'fe']);
+Route::get('be', [MainController::class, 'be']);
+
 Route::get('registersuccess',[SuccessController::class,'registersuccess']);
 
 Route::get('/registerpage', [RegisterAndLoginController::class, 'registerpage']);

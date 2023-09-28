@@ -1,45 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>APD - Home</title>
-        <link rel = "stylesheet" href = "style.css">
-        <link rel = "icon" href = "apdicon.png">
-        <script src="https://kit.fontawesome.com/b3459fa126.js" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    </head>
-    <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-        <div class="container-fluid">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/home" style = "color: white;">Home</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" href = "apdicon.png">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>APD - Home</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <img src = "apdicon.png" alt = "APD Logo" class = "logo">
+            <ul>
+                <li class = "home">
+                    <a href = "/home">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/codequest" style = "color: white;">Code Quest</a>
+                <li class = "cq">
+                    <a href = "/codequest">Code Quest</a>
+                </li>
+                <li class = "news">
+                    <a href = "news">News</a>
+                </li>
+                <li class = "about">
+                    <a href = "about">About</a>
+                </li>
+                <li class = "profile">
+                    <a href = "#"><i class="fa-solid fa-address-card"></i></a>
+                </li>
+                <li class = "hamburger">
+                    <a href = "#">
+                        <div class = "bar"></div>
+                    </a>
                 </li>
             </ul>
-            <a class="navbar-brand" href="#">
-                <img src="apdlogo.png" alt="APD logo" width="300" height="70" class="d-inline-block align-text-top">
-            </a>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/news" style = "color: white;">News</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about" style = "color: white;">About</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class = "row main">
-        
-    </div>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  </body>
+        </nav>
+    </header>
+    
+</body>
 </html>
