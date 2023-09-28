@@ -54,7 +54,7 @@
                 },
                 success:function(response){
                     if(response.success){
-                        window.location.href="home";
+                        window.location.href="/home";
                     }
                     else{
                         $("#error").text("Incorrect Credentials!");

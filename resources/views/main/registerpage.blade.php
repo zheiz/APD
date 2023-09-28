@@ -309,10 +309,7 @@
                     success:function(response){
                         if(response.success){
                             console.log('User successfully registered!');
-                            console.log(response.data);
-                        }
-                        else{
-                            console.log('User failed to register!');
+                            window.location.href="registersuccess";
                         }
                     },
                     error:function(error){

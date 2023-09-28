@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RegisterAndLoginController;
+use App\Http\Controllers\SuccessController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,7 @@ Route::get('codequest', [MainController::class, 'codequest']);
 Route::get('news', [MainController::class, 'news']);
 Route::get('about', [MainController::class, 'about']);
 
-
+Route::get('registersuccess',[SuccessController::class,'registersuccess']);
 
 Route::get('/registerpage', [RegisterAndLoginController::class, 'registerpage']);
 Route::get('/loginpage', function () {
