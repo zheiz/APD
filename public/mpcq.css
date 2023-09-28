@@ -1,0 +1,58 @@
+body {
+    background-color: rgb(38, 38, 38) !important;
+}
+  
+#question {
+    color: white !important;
+}
+
+button {
+    background: white !important;
+}
+
+.container {
+    background-color: rgb(31, 31, 31);
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    border-radius: 10px !important;
+    padding: 5px 10px !important;
+    color: white;
+    outline: none;
+}
+
+.btn:hover {
+    border-color: black !important;
+}
+
+.btn.correct {
+    --hue: rgb(0, 159, 0);
+    color: black;
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    padding: 10px 20px !important;
+}
+
+.controls {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+  
+  .hide {
+    display: none;
+}

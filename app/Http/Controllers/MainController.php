@@ -15,7 +15,7 @@ class MainController extends Controller
     public function codequest()
     {
         // Return the "Home" view
-        return view('main/codequest');
+        return view('main/codequest/mpcq');
     }
 
     public function news()
