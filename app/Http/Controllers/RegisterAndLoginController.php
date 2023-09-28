@@ -7,7 +7,7 @@ use Hash;
 use Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 
 class RegisterAndLoginController extends Controller
 {
@@ -23,49 +23,55 @@ class RegisterAndLoginController extends Controller
 
     public function login(Request $request)
     {
-        $request->validate([
-            'studentid' => 'required',
-            'password' => 'required',
+        $credentials=$request->validate([
+            'studentid'=>['required'],
+            'password'=>['required']
         ]);
-    
-        $credentials = $request->only('studentid', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('main.home')
-                        ->withSuccess('Signed in');
+        if(Auth::attempt($credentials)){
+            return response()->json(["success"=>true]);
         }
-   
-        return redirect("login")->withSuccess('Login details are not valid');
+        return response()->json(["success"=>false]); 
     }
-
+    public function studentNumExists(Request $request){
+        $data=$request->all();
+        $studNumber=$data['studentid'];
+        $result=DB::table('users')
+            ->where('studentid',$studNumber)
+            ->first();
+        if(empty($result)){
+            return response()->json(["success"=>false]);   
+        }
+        return response()->json(["success"=>true]);
+    }
     public function register(Request $request)
     {  
-        $request->validate([
-            'studentid' => 'required',
-            'firstname' => 'required',
-            'middlename' => '',
-            'lastname' => 'required',
-            'yearlevel' => 'required',
-            'program' => 'required',
-            'password' => 'required | password',
-        ]);
-            
         $data = $request->all();
-        $check = $this->create($data);
-          
+        $check = $this->create($data);  
         return redirect("dashboard")->withSuccess('have signed-in');
     }
 
     public function create(array $data)
     {
-      return User::create([
-        'studentid' => $data['studentid'],
-        'firstname' => $data['firstname'],
-        'middlename' => $data['middlename'],
-        'lastname' => $data['lastname'],
-        'yearlevel' => $data['yearlevel'],
-        'program' => $data['program'],
-        'password' => $data['password'],
-    ]);
+        return DB::table('users')
+        ->insert([
+            'studentid' => $data['studentid'],
+            'firstname' => $data['firstname'],
+            'middlename' => $data['middlename'],
+            'lastname' => $data['lastname'],
+            'yearlevel' => $data['yearlevel'],
+            'program' => $data['program'],
+            'password' => bcrypt($data['password'])
+        ]);
+      
+      /*return User::create([
+            'studentid' => $data['studentid'],
+            'firstname' => $data['firstname'],
+            'middlename' => $data['middlename'],
+            'lastname' => $data['lastname'],
+            'yearlevel' => $data['yearlevel'],
+            'program' => $data['program'],
+            'password' => bcrypt($data['password']),
+        ]);*/
     }
 
     public function success()
