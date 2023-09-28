@@ -15,7 +15,7 @@ use App\Http\Controllers\RegisterAndLoginController;
 */
 
 Route::get('/', function () {
-    return view('main.registerpage');
+    return view('main.loginpage');
 });
 
 Route::get('home', [MainController::class, 'home']);
@@ -31,3 +31,4 @@ Route::get('/loginpage', function () {
 });
 Route::get('/student-num-exists',[RegisterAndLoginController::class,'studentNumExists']);
 Route::post('/register',[RegisterAndLoginController::class,'register']);
+Route::post('/login',[RegisterAndLoginController::class,'login']);

@@ -33,7 +33,7 @@ CREATE TABLE `users` (
   `completed` int DEFAULT NULL,
   `streak` int DEFAULT NULL,
   `medals` int DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`studentid`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `studentid_UNIQUE` (`studentid`)

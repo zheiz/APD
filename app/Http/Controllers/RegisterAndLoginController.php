@@ -23,18 +23,14 @@ class RegisterAndLoginController extends Controller
 
     public function login(Request $request)
     {
-        $request->validate([
-            'studentid' => 'required',
-            'password' => 'required',
+        $credentials=$request->validate([
+            'studentid'=>['required'],
+            'password'=>['required']
         ]);
-    
-        $credentials = $request->only('studentid', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('main.home')
-                        ->withSuccess('Signed in');
+        if(Auth::attempt($credentials)){
+            return response()->json(["success"=>true]);
         }
-   
-        return redirect("login")->withSuccess('Login details are not valid');
+        return response()->json(["success"=>false]); 
     }
     public function studentNumExists(Request $request){
         $data=$request->all();
@@ -56,7 +52,7 @@ class RegisterAndLoginController extends Controller
 
     public function create(array $data)
     {
-      /*return DB::table('users')
+        return DB::table('users')
         ->insert([
             'studentid' => $data['studentid'],
             'firstname' => $data['firstname'],
@@ -64,18 +60,18 @@ class RegisterAndLoginController extends Controller
             'lastname' => $data['lastname'],
             'yearlevel' => $data['yearlevel'],
             'program' => $data['program'],
-            'password' => $data['password']
-        ]);*/
+            'password' => bcrypt($data['password'])
+        ]);
       
-      return User::create([
+      /*return User::create([
             'studentid' => $data['studentid'],
             'firstname' => $data['firstname'],
             'middlename' => $data['middlename'],
             'lastname' => $data['lastname'],
             'yearlevel' => $data['yearlevel'],
             'program' => $data['program'],
-            'password' => $data['password'],
-        ]);
+            'password' => bcrypt($data['password']),
+        ]);*/
     }
 
     public function success()

@@ -56,6 +56,7 @@
                 <small id="confirmpassword-error" style="color:red"></small>
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
+            <br><br>
             <a href = "/loginpage" class="mt-2">Already have an account</a>
         </form>
     </div>
