@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\MCController;
 use App\Http\Controllers\RegisterAndLoginController;
 use App\Http\Controllers\SuccessController;
 /*
@@ -29,6 +30,7 @@ Route::get('profile', [MainController::class, 'profile']);
 Route::get('mpcq', [MainController::class, 'mpcq']);
 Route::get('fe', [MainController::class, 'fe']);
 Route::get('be', [MainController::class, 'be']);
+Route::post('updatePoints', [MCController::class, 'updatePoints']);
 
 Route::get('registersuccess',[SuccessController::class,'registersuccess']);
 

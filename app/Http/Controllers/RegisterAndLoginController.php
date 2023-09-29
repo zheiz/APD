@@ -64,23 +64,14 @@ class RegisterAndLoginController extends Controller
         return DB::table('users')
         ->insert([
             'studentid' => $data['studentid'],
-            'firstname' => $data['firstname'],
-            'middlename' => $data['middlename'],
-            'lastname' => $data['lastname'],
-            'yearlevel' => $data['yearlevel'],
-            'program' => $data['program'],
-            'password' => bcrypt($data['password'])
-        ]);
-      
-      /*return User::create([
-            'studentid' => $data['studentid'],
+            'email' => $data['email'],
             'firstname' => $data['firstname'],
             'middlename' => $data['middlename'],
             'lastname' => $data['lastname'],
             'yearlevel' => $data['yearlevel'],
             'program' => $data['program'],
             'password' => bcrypt($data['password']),
-        ]);*/
+        ]);
     }
 
     public function success()
