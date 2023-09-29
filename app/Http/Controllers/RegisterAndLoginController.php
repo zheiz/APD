@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Hash;
-use Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+
 
 class RegisterAndLoginController extends Controller
 {
@@ -28,7 +29,15 @@ class RegisterAndLoginController extends Controller
             'password'=>['required']
         ]);
         if(Auth::attempt($credentials)){
-            return response()->json(["success"=>true]);
+
+            $user = Auth::user(); // Get the authenticated user
+
+            // Store user information in the session
+            $request->session()->put('studentid', $user->studentid);
+            return response()->json([
+                "success"=>true,
+                "message"=>$user
+            ]);
         }
         return response()->json(["success"=>false]); 
     }
@@ -86,7 +95,6 @@ class RegisterAndLoginController extends Controller
     public function signOut() {
         Session::flush();
         Auth::logout();
-        return Redirect('login');
     }
 
 

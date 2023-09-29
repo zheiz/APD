@@ -39,3 +39,4 @@ Route::get('/loginpage', function () {
 Route::get('/student-num-exists',[RegisterAndLoginController::class,'studentNumExists']);
 Route::post('/register',[RegisterAndLoginController::class,'register']);
 Route::post('/login',[RegisterAndLoginController::class,'login']);
+Route::post('/signOut',[RegisterAndLoginController::class,'signOut']);

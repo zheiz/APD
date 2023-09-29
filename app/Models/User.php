@@ -24,7 +24,10 @@ class User extends Authenticatable
         'lastname',
         'yearlevel',
         'program',
-        'password'
+        'password',
+        'points',
+        'streak',
+        'medals'
     ];
 
     /**

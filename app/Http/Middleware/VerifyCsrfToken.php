@@ -15,5 +15,6 @@ class VerifyCsrfToken extends Middleware
         '/student-num-exists',
         '/register',
         '/login',
+        '/signOut',
     ];
 }
