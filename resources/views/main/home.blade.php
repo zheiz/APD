@@ -21,13 +21,13 @@
                     <a href = "/codequest">Code Quest</a>
                 </li>
                 <li class = "news">
-                    <a href = "news">News</a>
+                    <a href = "/news">News</a>
                 </li>
                 <li class = "about">
-                    <a href = "about">About</a>
+                    <a href = "/about">About</a>
                 </li>
                 <li class = "profile">
-                    <a href = "#"><i class="fa-solid fa-address-card"></i></a>
+                    <a href = "/profile"><i class="fa-solid fa-address-card"></i></a>
                 </li>
                 <li class = "hamburger">
                     <a href = "#">

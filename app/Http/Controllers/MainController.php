@@ -30,6 +30,11 @@ class MainController extends Controller
         return view('main/about');
     }
 
+    public function profile()
+    {
+        return view('main/profile');
+    }
+
     //Code Quest routes
 
     public function mpcq()
