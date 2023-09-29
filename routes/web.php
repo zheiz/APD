@@ -23,6 +23,12 @@ Route::get('home', [MainController::class, 'home']);
 Route::get('codequest', [MainController::class, 'codequest']);
 Route::get('news', [MainController::class, 'news']);
 Route::get('about', [MainController::class, 'about']);
+Route::get('profile', [MainController::class, 'profile']);
+
+//Code Quest Routes
+Route::get('mpcq', [MainController::class, 'mpcq']);
+Route::get('fe', [MainController::class, 'fe']);
+Route::get('be', [MainController::class, 'be']);
 
 Route::get('registersuccess',[SuccessController::class,'registersuccess']);
 
