@@ -42,3 +42,4 @@ Route::get('/student-num-exists',[RegisterAndLoginController::class,'studentNumE
 Route::post('/register',[RegisterAndLoginController::class,'register']);
 Route::post('/login',[RegisterAndLoginController::class,'login']);
 Route::post('/signOut',[RegisterAndLoginController::class,'signOut']);
+Route::post('/updateProfile',[RegisterAndLoginController::class,'updateProfile']);

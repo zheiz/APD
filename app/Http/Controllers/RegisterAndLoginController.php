@@ -88,5 +88,30 @@ class RegisterAndLoginController extends Controller
         Auth::logout();
     }
 
+    public function updateProfile(Request $request)
+    {
+        $user = Auth::user();
+
+        if ($user) {
+            // Validate and update the user's profile details
+            DB::table('users')
+                ->updateOrInsert([
+                    'email' => $request->input('email'),
+                    'yearlevel' => $request->input('yearlevel'),
+                    'program' => $request->input('program'),
+                ]);
+
+            return response()->json([
+                "success" => true,
+                "message" => "Profile updated successfully",
+            ]);
+        } else {
+            return response()->json([
+                "success" => false,
+                "message" => "User not found",
+            ], 404);
+        }
+    }
+
 
 }

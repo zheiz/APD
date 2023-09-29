@@ -57,42 +57,42 @@
             <div class="card mb-4">
                 <div class="card-header">Account Details</div>
                 <div class="card-body">
-                    <form>
+                    <form id = "accountDetails">
                         <div class="row gx-3 mb-3">
                             <div class="col-md-6">
                                 <label class="small mb-1" for="studentid">Student Number</label>
-                                <input class="form-control" id="studentid" type="text" placeholder="Enter your Student Number" value="{{ Auth::user()->studentid }}">
+                                <input class="form-control" for="studentid" id="studentid" type="text" placeholder="Enter your Student Number" value="{{ Auth::user()->studentid }}" disabled>
                             </div>
                             <div class="col-md-6">
                                 <label class="small mb-1" for="email">Email</label>
-                                <input class="form-control" id="email" type="text" placeholder="Enter your Email" value="{{ Auth::user()->email }}">
+                                <input class="form-control" for="email" id="email" type="text" placeholder="Enter your Email" value="{{ Auth::user()->email }}">
                             </div>
                         </div>
                         <div class="row gx-3 mb-3">                
                             <div class="col-md-4">
                                 <label class="small mb-1" for="inputFirstName">First Name</label>
-                                <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your First Name" value="{{ Auth::user()->firstname }}">
+                                <input class="form-control" for="inputFirstName" id="inputFirstName" type="text" placeholder="Enter your First Name" value="{{ Auth::user()->firstname }}" disabled>
                             </div>
                             <div class="col-md-4">
                                 <label class="small mb-1" for="middlename">Middle Name</label>
-                                <input class="form-control" id="middlename" type="text" placeholder="Enter your Middle Name" value="{{ Auth::user()->middlename }}">
+                                <input class="form-control" for="middlename" id="middlename" type="text" placeholder="Enter your Middle Name" value="{{ Auth::user()->middlename }}" disabled>
                             </div>
                             <div class="col-md-4">
                                 <label class="small mb-1" for="lastname">Last Name</label>
-                                <input class="form-control" id="lastname" type="text" placeholder="Enter your Last Name" value="{{ Auth::user()->lastname }}">
+                                <input class="form-control" id="lastname" type="text" placeholder="Enter your Last Name" value="{{ Auth::user()->lastname }}" disabled>
                             </div>
                         </div>
                         <div class="row gx-3 mb-3">
                             <div class="col-md-6">
                                 <label class="small mb-1" for="yearlevel">Year Level</label>
-                                <input class="form-control" id="yearlevel" type="text" placeholder="Enter your Year Level" value="{{ Auth::user()->yearlevel }}">
+                                <input class="form-control" for="yearlevel" id="yearlevel" type="text" placeholder="Enter your Year Level" value="{{ Auth::user()->yearlevel }}">
                             </div>
                             <div class="col-md-6">
                                 <label class="small mb-1" for="program">Program</label>
-                                <input class="form-control" id="program" type="text" placeholder="Enter your Program" value="{{ Auth::user()->program }}">
+                                <input class="form-control" for="program" id="program" type="text" placeholder="Enter your Program" value="{{ Auth::user()->program }}">
                             </div>
                         </div>
-                        <button class="btn btn-warning" type="button">Save changes</button>
+                        <button class="btn btn-warning" type="button" id = "saveChangesButton">Save changes</button>
                         <button class="btn btn-warning" type="button" id = "signOutButton">Sign Out</button>
                     </form>
                 </div>
@@ -120,6 +120,39 @@ $(document).ready(function () {
         });
     });
 });
+
+$(document).ready(function () {
+    // Attach a click event handler to the "Save changes" button
+    $("#saveChangesButton").click(function (e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        // Serialize the form data
+        const formData = $("#accountDetails").serialize();
+        console.log(formData);
+
+        // Send an AJAX request to update the profile
+        $.ajax({
+            type: "POST",
+            url: "/updateProfile",
+            data: formData,
+            success: function (response) {
+                if (response.success) {
+                    // Display a success message or perform any desired actions
+                    console.log("Profile updated successfully");
+                } else {
+                    // Handle errors if necessary
+                    console.error("Profile update failed");
+                }
+            },
+            error: function () {
+                // Handle errors if necessary
+                console.error("Profile update failed");
+            }
+        });
+    });
+});
+
+
 </script>
 </body>
 </html>
