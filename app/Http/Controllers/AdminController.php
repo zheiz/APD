@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -28,7 +29,9 @@ class AdminController extends Controller
     
     public function adminusers()
     {
-        return view('admin/adminusers');
+        //return view('admin/adminusers');
+        $data = User::all();
+        return view('admin/adminusers', ['users'=>$data]);
     }
 
     public function adminadmins()

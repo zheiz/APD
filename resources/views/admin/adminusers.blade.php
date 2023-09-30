@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "icon" href = "apdicon.png">
-    <link rel="stylesheet" href = "admin/admindashboard.css">
+    <link rel="stylesheet" href = "admin/adminusers.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>APD Admin - Secret Office: Users</title>
 </head>
@@ -73,6 +73,37 @@
 
     <div class="main-content">
         <div class="container">
+            <section class="table_header">
+                <h1>Users</h1>
+            </section>
+            <section class="table_body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Avatar</th>
+                            <th>Student ID</th>
+                            <th>Email</th>
+                            <th>First Name</th>
+                            <th>Middle Name</th>
+                            <th>Last Name</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($users as $user)
+                    <tr>
+                        <td><img id = "avatar" src = "{{ $user['avatar']}}"></td>
+                        <td>{{ $user['studentid']}}</td>
+                        <td>{{ $user['email']}}</td>
+                        <td>{{ $user['firstname']}}</td>
+                        <td>{{ $user['middlename']}}</td>
+                        <td>{{ $user['lastname']}}</td>
+                        <td>{{ $user['points']}}</td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </section>
         </div>
     </div>
 
