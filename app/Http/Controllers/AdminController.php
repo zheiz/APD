@@ -9,9 +9,31 @@ use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
+
+    public function admindashboard()
+    {
+        return view('admin/admindashboard');
+    }
+
+    public function adminsubmissions()
+    {
+        return view('admin/adminsubmissions');
+    }
+    
+
     public function adminnews()
     {
         return view('admin/adminnews');
+    }
+    
+    public function adminusers()
+    {
+        return view('admin/adminusers');
+    }
+
+    public function adminadmins()
+    {
+        return view('admin/adminadmins');
     }
 
     public function create(array $data)

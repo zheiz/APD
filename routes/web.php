@@ -48,5 +48,9 @@ Route::post('/uploadPhoto', [RegisterAndLoginController::class, 'uploadPhoto']);
 
 
 //Routes for admin
-Route::get('/adminnews', [AdminController::class, 'adminnews']);
+Route::get('/admindashboard', [AdminController::class, 'admindashboard']);
+Route::get('/adminsubmissions', [AdminController::class, 'adminsubmissions']);
+Route::get('adminnews', [AdminController::class, 'adminnews']);
+Route::get('/adminusers', [AdminController::class, 'adminusers']);
+Route::get('/adminadmins', [AdminController::class, 'adminadmins']);
 Route::post('/post', [AdminController::class, 'post']);
