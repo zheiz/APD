@@ -73,9 +73,6 @@
 
     <div class="main-content">
         <div class="container">
-            <section class="table_header">
-                <h1>Users</h1>
-            </section>
             <section class="table_body">
                 <table>
                     <thead>
