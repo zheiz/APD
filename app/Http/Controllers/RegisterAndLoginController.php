@@ -114,5 +114,36 @@ class RegisterAndLoginController extends Controller
         }
     }
 
+    public function uploadPhoto(Request $request)
+    {
+        $request->validate([
+            'avatar' => 'image|mimes:jpeg,png,jpg|max:5120', // Max file size in KB (5MB)
+        ]);
+
+        $user = Auth::user();
+
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $avatarName = $user->studentid . '.' . $avatar->getClientOriginalExtension();
+            $avatarPath = 'users/' . $avatarName;
+            $avatar->move(public_path('users'), $avatarName);
+
+            DB::table('users')
+                ->where('studentid', $user->studentid)
+                ->update([
+                    'avatar' => $avatarPath,
+                ]);
+
+            return response()->json([
+                "success" => true,
+                "message" => "Photo uploaded successfully",
+            ]);
+        } else {
+            return response()->json([
+                "success" => false,
+                "message" => "No file uploaded",
+            ]);
+        }
+    }
 
 }

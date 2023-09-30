@@ -47,9 +47,10 @@
             <div class="card mb-4 mb-xl-0">
                 <div class="card-header">Profile Picture</div>
                 <div class="card-body text-center">
-                    <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <img class="img-account-profile rounded-circle mb-2" src="{{ Auth::user()->avatar }}" alt="" id = "avatar">
                     <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                    <button class="btn btn-warning" type="button">Upload new image</button>
+                    <input id = "uploadAvatar" type = "file" class = "form-control" name = "avatar">
+                    <button class="btn btn-warning" type="button" id = "upload">Upload new image</button>
                 </div>
             </div>
         </div>
@@ -149,6 +150,38 @@ $(document).ready(function () {
             error: function () {
                 // Handle errors if necessary
                 console.error("Profile update failed");
+            }
+        });
+    });
+});
+
+$(document).ready(function () {
+    // Attach a click event handler to the "Upload new image" button
+    $("#upload").click(function (e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        var formData = new FormData();
+        formData.append("avatar", $("#uploadAvatar")[0].files[0]);
+
+        // Send an AJAX request to update the profile photo
+        $.ajax({
+            type: "POST",
+            url: "/uploadPhoto",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                if (response.success) {
+                    // Display a success message or perform any desired actions
+                    console.log("Photo uploaded successfully");
+                } else {
+                    // Handle errors if necessary
+                    console.error("Photo upload failed");
+                }
+            },
+            error: function () {
+                // Handle errors if necessary
+                console.error("Photo upload failed");
             }
         });
     });
