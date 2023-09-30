@@ -30,6 +30,9 @@ class User extends Authenticatable
         'streak',
         'medals',
         'avatar',
+        'title',
+        'content',
+        'author',
     ];
 
     /**
