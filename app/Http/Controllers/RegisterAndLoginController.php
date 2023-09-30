@@ -95,7 +95,8 @@ class RegisterAndLoginController extends Controller
         if ($user) {
             // Validate and update the user's profile details
             DB::table('users')
-                ->updateOrInsert([
+                ->where('studentid', $user->studentid)
+                ->update([
                     'email' => $request->input('email'),
                     'yearlevel' => $request->input('yearlevel'),
                     'program' => $request->input('program'),

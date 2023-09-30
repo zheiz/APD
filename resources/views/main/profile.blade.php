@@ -92,8 +92,8 @@
                                 <input class="form-control" for="program" id="program" type="text" placeholder="Enter your Program" value="{{ Auth::user()->program }}">
                             </div>
                         </div>
-                        <button class="btn btn-warning" type="button" id = "saveChangesButton">Save changes</button>
-                        <button class="btn btn-warning" type="button" id = "signOutButton">Sign Out</button>
+                        <button class="btn btn-warning" type="submit" id="saveChangesButton">Save changes</button>
+                        <button class="btn btn-warning" type="button" id="signOutButton">Sign Out</button>
                     </form>
                 </div>
             </div>
@@ -126,9 +126,11 @@ $(document).ready(function () {
     $("#saveChangesButton").click(function (e) {
         e.preventDefault(); // Prevent the default form submission
 
-        // Serialize the form data
-        const formData = $("#accountDetails").serialize();
-        console.log(formData);
+        var formData = {
+                email: $("#email").val(),
+                yearlevel: $("#yearlevel").val(),
+                program: $("#program").val()
+        };
 
         // Send an AJAX request to update the profile
         $.ajax({
